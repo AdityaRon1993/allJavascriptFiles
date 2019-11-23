@@ -1,0 +1,38 @@
+#one{
+    width: 600px;
+    height: 600px;
+    background-color: aqua;
+    position: relative;
+
+}
+#two{
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    color: aliceblue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+}
+
+#three{
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+    color: crimson;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+
+    
+    /* ----only for p tag---- */
+    
+    /* margin: 0;  */
+    
+    /* ----only for p tag---- */
+    
+    
+    text-align: justify;
+}

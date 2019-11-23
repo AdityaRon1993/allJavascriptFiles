@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border:1px solid rgb(110, 12, 12);
+        }
+    
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Dynamic Table</h1>
+        <table>
+
+        </table>
+    </center>
+    <script>
+        let table_data=[
+            {Id:1001,Name:'Aditya Ron Adhikari',Department:'UI',Address:'Bangalore'},
+            {Id:1002,Name:'Banalata Adhikari',Department:'Doctor',Address:'Siliguri'},
+            {Id:1003,Name:'Ajoy Adhikari',Department:'Principal',Address:'Jiaganj'},
+            {Id:1004,Name:'Bikram Adhikary',Department:'Python Developer',Address:'Bangalore'},
+            {Id:1005,Name:'Neel Mitra',Department:'Java Tester',Address:'Kundalahali'},
+            {Id:1006,Name:'Dhruvajoti Das',Department:'UI',Address:'Marathalli'},
+            {Id:1007,Name:'Sayan De',Department:'Support',Address:'Kolkata'},
+            {Id:1008,Name:'Sayantan Mitra',Department:'UI',Address:'Kundalahali'}
+
+            
+        ]
+        let tab=document.querySelector('table');
+        
+        // bold Header
+        let tr=document.createElement('tr');
+        let td;
+        tr.style.border='1px dotted brown';
+
+        let head=Object.keys(table_data[0]);
+        head.map((a)=>{
+            td=document.createElement('th');
+            td.innerText=a;
+            td.style.border='1px solid rgb(110, 12, 12)';
+            tr.appendChild(td);
+        });
+        //main content
+        tab.appendChild(tr);
+        table_data.map(f1);
+        function f1(ele){
+            tr=document.createElement('tr');
+            let obj=Object.values(ele);
+            
+            
+            obj.map((element)=>{
+                td=document.createElement('td');
+                td.innerText=element;
+                td.style.border='1px solid rgb(110, 12, 12)';
+                tr.appendChild(td);
+                });
+            tab.appendChild(tr);
+            return ele;
+        }
+    </script>
+</body>
+</html>

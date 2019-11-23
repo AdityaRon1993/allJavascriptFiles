@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <form id="inwork">
+            <label><input type="checkbox" name="" value="Select_All" onchange="f1()">Select All</label><br>
+            <label><input type="checkbox" name="" value="Cricket" onchange="f2()">Cricket</label><br>
+            <label><input type="checkbox" name="" value="Football" onchange="f2()">Football</label><br>
+            <label><input type="checkbox" name="" value="Tennis"onchange="f2()">Tennis</label><br>
+            <label><input type="checkbox" name="" value="Badminton"onchange="f2()">Badminton</label><br>
+        </form>
+    </center>
+
+    <script>
+        function f2() {
+            var checkbox = document.querySelectorAll('input');
+            for (i = 1; i < checkbox.length; i++)
+                if (checkbox[i].checked == false) {
+                    checkbox[0].checked = false;
+                    break;
+                } else if (i == (checkbox.length - 1))
+                checkbox[0].checked = true;
+
+
+
+        }
+
+        function f1() {
+            var checkbox = document.querySelectorAll('input');
+
+            if (checkbox[0].checked)
+            // checkbox.map((a)=>a.checked='true');
+                for (i = 1; i < checkbox.length; i++)
+                checkbox[i].checked = true;
+            else
+                for (i = 1; i < checkbox.length; i++)
+                    checkbox[i].checked = false;
+        }
+
+        /* // -------- cannot use checkox array as an array.. it has different prototype..
+           //   ----- tried to change prototype but still didn't work------------
+          checkbox.__prototype__=Array.prototype;
+              if(checkbox[0].checked)
+                  checkbox.map((a)=>a.checked='true');
+                  
+              else               
+                  checkbox.map((a)=>a.checked='flase');
+        */
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+<script>
+
+var cli=(function(){
+var counter=0;
+return function(){
+++counter;
+document.querySelector('.counter').textContent=counter;
+// console.log(counter);
+}
+})();
+</script>
+<button type="button" onclick="cli()"> Click Me </button>
+<p id="counter">hi</p>
+
+
+</body>
+
+</html>

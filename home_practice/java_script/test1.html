@@ -1,0 +1,48 @@
+<!-- onkeydown -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="">
+            <textarea name="" id="text" cols="30" rows="10" maxlength="200" onkeydown="f1()"></textarea>
+            
+            <p>Number of letters remaining are <span class="output">200</span></p>
+
+
+
+            <select onchange="f2()" id="state_select">
+                    <option value="Select" selected disabled>Select</option>
+                    <option value="Andra Pradesh">Andra Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Orissa">Orissa</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Karnataka">Karnataka</option>
+            </select>
+            <p>You have selected <span id="state">no</span> state</p>
+    </form>
+    
+    <script>
+    
+        function f1(){
+            var a=document.getElementById('text').value;
+            var b=200-a.length;
+            b=b<0? 0:b;
+            document.querySelector('.output').innerHTML=b;
+        }
+        
+
+        function f2()
+        {
+            let value=document.querySelector('#state_select').value;
+            console.log(value);
+            document.querySelector('#state').innerHTML=value;
+        }
+    </script>
+</body>
+</html>

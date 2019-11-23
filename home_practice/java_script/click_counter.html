@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <button id="btn" onclick="f1()">Click Me</button>
+        <p id="cnt">none</p>
+    <script>
+        
+   
+    var f1= (function(){
+        var counter=0;
+        return function()
+        {
+            ++counter;
+            document.querySelector('#cnt').innerHTML=counter;
+            console.log(counter);
+        }
+    })();
+
+    // document.querySelector('#btn').addEventListener('click',f1);
+    // let counter=0;
+    // function f1(){
+    //     ++counter;
+    //         document.querySelector('#cnt').innerHTML=counter;
+    //         console.log(counter);
+    // }
+
+       
+        
+    </script>
+    
+</body>
+</html>

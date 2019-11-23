@@ -1,0 +1,13 @@
+h1{
+    font-family: sans-serif;
+}
+body{
+    font-size: 20px;
+}
+#two{
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: justify;
+    font-weight: bolder; 
+}

@@ -1,0 +1,38 @@
+.box{
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    
+    background-color: rgba(11,147,174, 0.35);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    box-shadow: 0 2px 35px 2px rgba(0,0,0,0.25);
+    transition: transform 20ms, box-shadow 500ms;
+}
+.box:hover{
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    /* transition: transform 300ms, box-shadow 300ms; */
+    background-color: rgba(11,147,174, 0.35);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,50%);    
+    box-shadow: 0 2px 25px 1px rgba(0,0,0,0.25);
+    transform: scale(0.99);
+}
+/* .center{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+} */
+body{
+    background-color: rgb(127, 255, 212,0.5);
+    position: relative;
+}
+

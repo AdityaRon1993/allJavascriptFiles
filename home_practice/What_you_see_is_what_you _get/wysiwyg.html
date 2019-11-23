@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .edit_button{
+            border: 1px solid black;
+            padding: 20px;
+        }
+        .btn{
+            width:45PX;
+            height: 35px;
+            background-color: #e67e22;
+            border: 1px solid #e67e22;
+            outline: none;
+        }
+        .btn:hover{
+            box-shadow: 1px 1px 5px grey;
+        }
+
+        .btn:active{
+            box-shadow: 1px 1px 10px grey inset;
+        }
+        .textArea{
+            
+            border: 1px solid black;
+        }
+        input{
+            margin: 0;
+            padding: 0;
+
+        }
+    </style>
+</head>
+<body onload="change_color()">
+    <div class="edit_button">
+        <button class="btn"><b>B</b></button>
+        <button class="btn"><i>I</i></button>
+        <button class="btn"><u>U</u></button>
+        <input type="color"/>
+        <!-- <button class="btn">apply</button> -->
+    </div>
+    <br>
+    <br>
+    <!-- with div -->
+    <!-- <div class="textArea" contenteditable="true"> -->
+
+    </div>
+    <br><br><br>
+    <p>TRY WITH IFRAME WORKS BETTER</p> <!--not editable-->
+    
+    <!-- with iframe -->
+    <iframe name="text" class="textArea" cols="50" rows="10">
+
+    </iframe>
+
+
+    <script>
+
+        // with ifram
+
+
+        text.document.designMode = "on";
+        var btn=document.querySelectorAll('button');
+        var color=document.querySelector('input');
+        color.addEventListener('change',change_color);
+
+        for(i=0;i<btn.length;i++)
+        btn[i].addEventListener('click',text_decoration);
+        var btn_target;
+        function text_decoration(a){
+            btn_target=a.target.innerText;
+            console.log(btn_target);
+            switch(btn_target)
+            {
+                case 'B': text.document.execCommand('bold');
+                break;
+                case 'I': text.document.execCommand('italic');
+                break;
+                case 'U': text.document.execCommand('underline');
+                break;
+            } 
+        }  
+        function change_color()
+        {
+            color_value=color.value;
+            text.document.execCommand('forecolor', true, color_value);
+        }
+
+
+
+        // with div
+        
+        // var a=document.querySelectorAll('button');
+        // for(i=0;i<a.length;i++)
+        // a[i].addEventListener('click',f1);
+        // var b;
+        // function f1(a){
+        //     b=a.target.innerText;
+        //     console.log(b);
+        //     switch(b)
+        //     {
+        //         case 'B': document.execCommand('bold');
+        //         break;
+        //         case 'I': document.execCommand('italic');
+        //         break;
+        //         case 'U': document.execCommand('underline');
+        //         break;
+        //     } 
+        // }
+        
+    </script>
+</body>
+</html>

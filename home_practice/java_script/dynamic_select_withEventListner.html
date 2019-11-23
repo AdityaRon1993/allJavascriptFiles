@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamic select with addEventListener</title>
+</head>
+
+<body>
+    <center>
+        <form id="inwork">
+            <label><input type="checkbox" name="" value="Select_All" >Select All</label><br>
+            <label><input type="checkbox" name="" value="Cricket" >Cricket</label><br>
+            <label><input type="checkbox" name="" value="Football"">Football</label><br>
+            <label><input type="checkbox" name="" value="Tennis">Tennis</label><br>
+            <label><input type="checkbox" name="" value="Badminton">Badminton</label><br>
+        </form>
+    </center>
+
+    <script>
+        let select = document.querySelectorAll('input');
+        let check = function(e) {
+            let checkbox = document.querySelectorAll('input');
+            if (e.target.value != 'Select_All') {
+                for (i = 1; i < checkbox.length; i++)
+                    if (checkbox[i].checked == false) {
+                        checkbox[0].checked = false;
+                        break;
+                    } else if (i == (checkbox.length - 1))
+                    checkbox[0].checked = true;
+            } else {
+                if (checkbox[0].checked)
+                    for (i = 1; i < checkbox.length; i++)
+                        checkbox[i].checked = true;
+                else
+                    for (i = 1; i < checkbox.length; i++)
+                        checkbox[i].checked = false;
+            }
+
+
+        }
+        select.forEach(ele => {
+            ele.addEventListener("change", check)
+        })
+    </script>
+
+</body>
+
+</html>

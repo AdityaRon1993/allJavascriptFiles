@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>List</h1>
+        <ul id="list">
+
+        </ul>
+
+        <h1>Select state</h1>
+        <select name="" id="drop_down">
+
+        </select>
+    </center>
+
+    <script>
+    let list_item=['one', 'two','three', 'four', 'five'];
+    let ul= document.querySelector('#list');
+    let new_li;
+    for(a of list_item)
+    {
+        new_li=document.createElement('li');//<li></li>
+        new_li.innerHTML=a;//<li>one</li>
+        ul.appendChild(new_li);
+    }
+    let select=document.querySelector("#drop_down");
+    select.options[0]=new Option('Select');
+    select.options[0].setAttribute('selected',true);
+    select.options[0].setAttribute('disabled',true)
+    
+    
+    for(a of list_item)
+    {
+        select.options[select.options.length]=new Option(a)
+    }
+    
+    </script>
+</body>
+</html>

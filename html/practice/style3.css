@@ -1,0 +1,81 @@
+/* ----------- with Sticky----------- */
+/* === content is showing bot not sticking to the sides=== */
+
+#header{
+    
+    display: block;  /* for span*/
+    position: sticky;
+    background-color: black;
+    color: aliceblue;
+    font-size: 50px;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+
+    /*------ below not working for intended purpose----- */
+    /* margin: 0; */
+    /* padding-bottom: 0; */
+    top: 30px;  /* without top not working */
+
+    /* left: 0;
+    right: 0; */
+    
+    /* background not touching the end of the screen for sticky */
+}
+
+
+/* ---------- with fixed------------- */
+/* -------- not working as content is not visible----------- */
+
+/* #header{
+    display: block;
+    position: fixed;
+    background-color: black;
+    color: aliceblue;
+    font-size: 50px;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+    
+    margin: 0;
+    padding-bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    
+} */
+
+
+
+p{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    max-width: 200px;
+    background-color: aqua;
+    border: 2px solid red;
+}
+#two{
+       
+    display: inline-block;
+    max-width: 200px;
+    background-color: blueviolet; 
+    border: 2px dotted brown;
+}
+#three{
+    
+    max-width: 200px;
+    display: inline-block;
+    background-color: chartreuse;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: black;
+}
+
+/* --- trying to put the box in the middle of the screen--- */
+div.center{
+    margin: auto;
+}
+/* ----- not working------ */
